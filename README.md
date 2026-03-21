@@ -9,18 +9,9 @@ Each project focuses on real-world concepts and help me build storng cloud funda
 
 #  Projects Included
 # APP SERVICES 
-#  1. VNet to VNet Peering
 
-* Created two Virtual Networks
-* Connected them using **VNet Peering**
-* Tested communication between networks
 
- **Project Guide:**
-👉 [View Full PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/vnet%20to%20vnet%20peering%20.pdf)
-
----
-
-#  2. Azure App Services
+#  1. Azure App Services
 
 * Deployed a web application using Azure App Services
 * Learned how to host and manage web apps in Azure
@@ -30,9 +21,15 @@ Each project focuses on real-world concepts and help me build storng cloud funda
 👉 [View Full PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/app%20services%20%20%281%29.pdf)
 
 # VNET TO VNET PEERING
-# Project Documentation
+#  1. VNet to VNet Peering
 
-👉 [View VNet to VNet Peering PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/vnet%20to%20vnet%20peering%20.pdf)
+* Created two Virtual Networks
+* Connected them using **VNet Peering**
+* Tested communication between networks
+
+ **Project Guide:**
+👉 [View Full PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/vnet%20to%20vnet%20peering%20.pdf)
+
 #  Azure VNet to VNet Peering Project
 
 # Overview
