@@ -1,3 +1,4 @@
+
 # Beginner-Azure-Projects
 Welcome to my azure learning repository! 
 This repo contais hand-on projects  and practical exercise i've built while learning Microsoft Azure.
@@ -5,6 +6,30 @@ This repo contais hand-on projects  and practical exercise i've built while lear
 # About This Repository
 This repository is designed to showcase my journey in Azure Cloud.
 Each project focuses on real-world concepts and help me build storng cloud fundamentals.
+
+#  Projects Included
+# APP SERVICES 
+#  1. VNet to VNet Peering
+
+* Created two Virtual Networks
+* Connected them using **VNet Peering**
+* Tested communication between networks
+
+ **Project Guide:**
+👉 [View Full PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/vnet%20to%20vnet%20peering%20.pdf)
+
+---
+
+#  2. Azure App Services
+
+* Deployed a web application using Azure App Services
+* Learned how to host and manage web apps in Azure
+* Explored basic configuration and deployment process
+
+ **Project Guide:**
+👉 [View Full PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/app%20services%20%20%281%29.pdf)
+
+# VNET TO VNET PEERING
 # Project Documentation
 
 👉 [View VNet to VNet Peering PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/vnet%20to%20vnet%20peering%20.pdf)
