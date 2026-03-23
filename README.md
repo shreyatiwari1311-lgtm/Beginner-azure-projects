@@ -9,9 +9,21 @@ Each project focuses on real-world concepts and help me build storng cloud funda
 
 #  Projects Included
 # APP SERVICES 
+ What I Built
 
+In this project, I deployed a web application using Azure App Services.
+I configured the app to run in a managed environment, enabling easy deployment, scalability, and monitoring without managing infrastructure.
+# Challenges Faced
+Understanding how App Services works compared to Virtual Machines
+Issues during deployment and configuration
+Managing application settings and runtime environment
+Difficulty in accessing the app due to configuration errors
 
-#  1. Azure App Services
+# How I Resolved
+Learned the core concepts of App Services and deployment models
+Fixed deployment issues by carefully following step-by-step configuration
+Updated application settings and runtime stack properly
+Tested and verified the application after each change to ensure it was working correctly# Azure App Services
 
 * Deployed a web application using Azure App Services
 * Learned how to host and manage web apps in Azure
@@ -26,7 +38,7 @@ Each project focuses on real-world concepts and help me build storng cloud funda
  Project Documentation:
 
 
- What I Built
+# What I Built
 
 In this project, I implemented Azure Service Endpoints to establish a secure connection between Azure services and a Virtual Network (VNet).
 The goal was to restrict public access and allow communication only through the private Azure backbone network.
