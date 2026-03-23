@@ -19,6 +19,85 @@ Each project focuses on real-world concepts and help me build storng cloud funda
 
  **Project Guide:**
 👉 [View Full PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/app%20services%20%20%281%29.pdf)
+#  Azure Service Endpoints Project
+
+## 📌 Project Overview
+
+This project demonstrates how to securely connect Azure resources using **Azure Service Endpoints**, ensuring that traffic flows through the **Azure backbone network** instead of the public internet.
+
+It highlights how to **restrict access to Azure services** (like Storage Accounts) and allow communication only from a specific **Virtual Network (VNet)**.
+
+---
+
+##  Project Objective
+
+* Implement **Azure Service Endpoints**
+* Secure critical Azure resources
+* Restrict public access to services
+* Enable **VNet-based access control**
+
+---
+
+##  Azure Services Used
+
+*  [Azure Virtual Network (VNet)](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview)
+*  [Subnet](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet)
+*  [Azure Storage Account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview)
+*  [Service Endpoints](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview)
+
+---
+
+##  Detailed Documentation
+
+📘 **Step-by-step implementation guide:**
+👉 [View Full Project PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/services%20endpoints.pdf)
+
+---
+
+##  Implementation Steps
+
+1. Created an **Azure Virtual Network (VNet)**
+2. Added a **Subnet** within the VNet
+3. Enabled **Service Endpoints** on the subnet
+4. Created an **Azure Storage Account**
+5. Configured **network restrictions** on the storage account
+6. Allowed access only from the selected **VNet/Subnet**
+7. Validated secure access and blocked public traffic
+
+---
+
+##  Key Concept Explained
+
+**Azure Service Endpoints** extend your VNet identity to Azure services.
+
+✔ Traffic remains within the **Microsoft Azure network**
+✔ Eliminates exposure to the **public internet**
+✔ Enhances **data security and access control**
+
+---
+
+## Project Outcome
+
+* Secured Azure Storage using **Service Endpoints**
+* Successfully restricted unauthorized/public access
+* Ensured **private and secure communication** between Azure resources
+
+---
+
+##  Real-World Use Cases
+
+* Secure **backend application services**
+* Restrict access to **databases and storage accounts**
+* Implement **enterprise-grade network security**
+
+---
+
+##  Author
+
+**Shreya Tiwari**
+🔗 [Visit My GitHub Profile](https://github.com/shreyatiwari1311-lgtm)
+
+---
 
 # VNET TO VNET PEERING
 #  1. VNet to VNet Peering
