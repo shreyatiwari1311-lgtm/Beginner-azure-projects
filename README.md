@@ -21,8 +21,8 @@ Each project focuses on real-world concepts and help me build storng cloud funda
 👉 [View Full PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/app%20services%20%20%281%29.pdf)
 # Azure Service Endpoints Project
   
+https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/services%20endpoints.pdf?raw=true
 
-👉 Click here to view the complete project documentation
  Project Documentation:
 
 
