@@ -19,38 +19,26 @@ Each project focuses on real-world concepts and help me build storng cloud funda
 
  **Project Guide:**
 👉 [View Full PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/app%20services%20%20%281%29.pdf)
-# [Azure Service Endpoints Project](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/services%20endpoints.pdf)
+# Azure Service Endpoints Project
 
-# What I Implemented
-- Created a Virtual Network (VNet) with subnets  
-- Enabled **Service Endpoints** for Azure Storage Account  
-- Restricted access using network rules  
-- Allowed secure access only from selected subnet  
+ Project Documentation:
+View Complete Implementation Guide
 
----
+ What I Built
+
+In this project, I implemented Azure Service Endpoints to establish a secure connection between Azure services and a Virtual Network (VNet).
+The goal was to restrict public access and allow communication only through the private Azure backbone network.
 
 # Challenges Faced
-- Confusion between **Service Endpoints vs Private Endpoints**  
-- Issues while enabling endpoints on subnet  
-- Storage Account access blocked due to firewall settings  
-- Difficulty understanding secure traffic flow in Azure  
-
----
-
-# How I Resolved It
-- Corrected subnet configuration before enabling endpoints  
-- Updated **Storage Account firewall** to allow selected networks  
-- Tested connectivity step-by-step  
-- Strengthened understanding of Azure networking concepts  
-
----
-
-# Key Learning
-- Service Endpoints enhance security by limiting access to VNets  
-- Proper configuration is critical in Azure networking  
-- Troubleshooting is an essential cloud skill
-
-
+Understanding the difference between Service Endpoints and Private Endpoints
+Configuring secure access without breaking connectivity
+Managing Network Security Group (NSG) rules correctly
+Initial misconfiguration of subnet and service access settings
+# How I Resolved Them
+Studied Azure documentation to clearly understand Service Endpoint behavior
+Carefully configured subnets and enabled service endpoints step-by-step
+Updated NSG rules to allow only required traffic
+Tested connectivity multiple times to ensure secure and proper access
 
 
 ---
