@@ -21,7 +21,7 @@ Each project focuses on real-world concepts and help me build storng cloud funda
 👉 [View Full PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/app%20services%20%20%281%29.pdf)
 #  Azure Service Endpoints Project
 
-## 📌 Project Overview
+##  Project Overview
 
 This project demonstrates how to securely connect Azure resources using **Azure Service Endpoints**, ensuring that traffic flows through the **Azure backbone network** instead of the public internet.
 
@@ -49,7 +49,7 @@ It highlights how to **restrict access to Azure services** (like Storage Account
 
 ##  Detailed Documentation
 
-📘 **Step-by-step implementation guide:**
+ **Step-by-step implementation guide:**
 👉 [View Full Project PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/services%20endpoints.pdf)
 
 ---
