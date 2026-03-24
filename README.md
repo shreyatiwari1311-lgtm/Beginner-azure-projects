@@ -31,6 +31,53 @@ Tested and verified the application after each change to ensure it was working c
 
  **Project Guide:**
 👉 [View Full PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/app%20services%20%20%281%29.pdf)
+# Private link
+
+This repository contains my hands-on implementation of beginner-level projects using Microsoft Azure. The goal of these projects was to understand cloud fundamentals, deployment processes, and core Azure services.
+
+---
+
+# What I Implemented
+
+- Deployed a web application using Azure App Service  
+- Created and configured Virtual Machines (VMs)  
+- Used Azure Storage (Blob Storage) for file handling  
+- Connected and managed Azure SQL Database  
+- Built a basic serverless function using Azure Functions  
+
+---
+
+# Challenges I Faced
+
+- Understanding Azure portal navigation and service structure  
+- Deployment errors while publishing web apps  
+- Configuring networking and firewall rules for Azure SQL  
+- Managing access permissions and authentication  
+- Debugging issues in Azure Functions  
+
+---
+
+# How I Resolved Them
+
+- Followed official Microsoft Azure documentation step-by-step  
+- Used logs and diagnostic tools in Azure Portal to identify errors  
+- Reconfigured firewall and networking settings properly  
+- Practiced role-based access control (RBAC) for permissions  
+- Tested components individually before integrating
+
+---
+
+# Conclusion
+
+These projects helped me build a strong foundation in cloud computing and Azure services. I gained practical experience in deployment, troubleshooting, and managing cloud resources.
+
+--- 
+
+# Project Link
+
+[View Project PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/private%20link.pdf)
+
+---
 # Azure Service Endpoints Project
   
 [View Project Documentation](https://raw.githubusercontent.com/shreyatiwari1311-lgtm/Beginner-azure-projects/main/services%20endpoints.pdf)
