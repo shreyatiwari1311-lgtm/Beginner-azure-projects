@@ -33,78 +33,90 @@ Tested and verified the application after each change to ensure it was working c
 👉 [View Full PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/app%20services%20%20%281%29.pdf)
 # Azure Private Link Implementation
 
-*Reference Document:** [GitHub Project - Private Link PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/private%20link.pdf)
-
-# Overview
-Implemented **[Azure Private Link](https://docs.microsoft.com/en-us/azure/private-link/private-link-overview)** for secure private connectivity to Azure services with [Private Endpoints](https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview), [DNS zones](https://docs.microsoft.com/en-us/azure/dns/private-dns-overview), and [RBAC](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview).
+**Reference:** [GitHub Project - Private Link PDF](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/private%20link.pdf)
 
 ---
-# Implementation
 
-- **[Private Endpoints](https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview)** - Configured for [Storage](https://docs.microsoft.com/en-us/azure/storage/), [Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/), [SQL Database](https://docs.microsoft.com/en-us/azure/azure-sql/)
-- **[Virtual Network](https://docs.microsoft.com/en-us/azure/virtual-network/)** - Multi-subnet architecture with proper [NSG](https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview) rules
-- **[Private DNS Zones](https://docs.microsoft.com/en-us/azure/dns/private-dns-overview)** - Linked to VNet for name resolution
-- **[Managed Identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/)** - Secure authentication without secrets
-- **[Monitoring](https://docs.microsoft.com/en-us/azure/azure-monitor/)** - [Network Watcher](https://docs.microsoft.com/en-us/azure/network-watcher/) and diagnostics enabled
+# Overview
+
+Implemented **[Azure Private Link](https://docs.microsoft.com/en-us/azure/private-link/)** for secure, private connectivity to Azure services. Created [Virtual Networks](https://docs.microsoft.com/en-us/azure/virtual-network/), [Storage Accounts](https://docs.microsoft.com/en-us/azure/storage/), and [Private Endpoints](https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview) with [Managed Identities](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/) for secure authentication.
+
+---
+
+# What Was Implemented
+
+**1. [Virtual Network (VNet)](https://docs.microsoft.com/en-us/azure/virtual-network/)** - Created "india-vnt" with subnet configuration (172.24.0.0/16 CIDR block, subnet-1: 172.24.0.0 - 172.24.255.255)
+
+**2. [Storage Account](https://docs.microsoft.com/en-us/azure/storage/)** - Created "shreyablob" in Central India with blob storage enabled, container "mycont" for data storage
+
+**3. [Private Endpoint](https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview)** - Created "storageendpoint" connected to Storage Account blob service, linked to india-vnt subnet
+
+**4. [Managed Identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/)** - Configured for secure authentication without storing credentials
+
+**5. [RBAC Roles](https://docs.microsoft.com/en-us/azure/role-based-access-control/)** - Assigned appropriate permissions for resource access
+
+**6. [Network Security](https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview)** - Configured public network access restrictions, disabled from all networks
 
 ---
 
 # Challenges & Solutions
-#
-# **1. DNS Resolution Failures**
-**Issue:** Services resolved to public IP instead of private endpoint  
-**Solution:** Linked [Private DNS Zones](https://docs.microsoft.com/en-us/azure/dns/private-dns-overview) to [VNet](https://docs.microsoft.com/en-us/azure/virtual-network/) and added A records pointing to private IPs
 
-# **2. NSG Rules Blocking Traffic**
-**Issue:** Port 443 outbound traffic was blocked  
-**Solution:** Added explicit allow rules in [NSG](https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview) for private endpoint subnet
+**1. Network Configuration Issues**
+- Had to properly configure [NSG](https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview) rules for subnet access
+- Solution: Added explicit allow rules for private endpoint traffic
 
-# **3. Connection Approval Delays**
-**Issue:** Manual approval required for each private endpoint connection  
-**Solution:** Approved pending connections and automated via [Azure Policy](https://docs.microsoft.com/en-us/azure/governance/policy/)
+**2. Storage Account Public Access**
+- Public network access initially enabled for all networks
+- Solution: Disabled public access, enforced private endpoint-only connectivity
 
-# **4. On-Premises Connectivity**
-**Issue:** On-premises clients couldn't access private endpoints  
-**Solution:** Deployed [VPN Gateway](https://docs.microsoft.com/en-us/azure/vpn-gateway/) and configured DNS forwarding
+**3. Private Endpoint Connectivity**
+- Challenges with [DNS resolution](https://docs.microsoft.com/en-us/azure/dns/private-dns-overview) for private endpoints
+- Solution: Configured private endpoint properly in correct subnet and verified connection status
 
-# **5. Managed Identity Access Issues**
-**Issue:** Applications couldn't authenticate to [Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/) through private endpoint  
-**Solution:** Assigned **Key Vault Secrets User** [RBAC](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview) role to [Managed Identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/)
+**4. Managed Identity Permissions**
+- [Managed Identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/) needed proper role assignments
+- Solution: Assigned roles through [RBAC](https://docs.microsoft.com/en-us/azure/role-based-access-control/) for secure access
 
-# **6. No Visibility into Connection Failures**
-**Issue:** Couldn't diagnose connection problems  
-**Solution:** Enabled [Diagnostic Settings](https://docs.microsoft.com/en-us/azure/azure-monitor/) and [Network Watcher Flow Logs](https://docs.microsoft.com/en-us/azure/network-watcher/)
+**5. CLI Operations**
+- Commands like `az storage blob list` were initially blocked by network rules
+- Solution: Ensured proper authentication and network configuration
+
 
 ---
 
-##  Best Practices
+# Best Practices Applied
 
-1. Link [Private DNS Zones](https://docs.microsoft.com/en-us/azure/dns/private-dns-overview) to [VNets](https://docs.microsoft.com/en-us/azure/virtual-network/)
-2. Configure explicit [NSG](https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview) allow rules
+1. Use [Private DNS Zones](https://docs.microsoft.com/en-us/azure/dns/private-dns-overview) for proper name resolution
+2. Implement [NSG](https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview) rules for network security
 3. Segment [Private Endpoints](https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview) in separate subnets
-4. Use [Managed Identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/) with [RBAC](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview)
-5. Enable monitoring from day one
+4. Use [Managed Identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/) over access keys
+5. Disable public network access when using [Private Links](https://docs.microsoft.com/en-us/azure/private-link/)
+6. Enable monitoring and diagnostics for troubleshooting
 
 ---
 
-# Quick Troubleshooting
+# Quick Reference
 
-| Issue | Fix |
-|-------|-----|
-| DNS not resolving | Link [Private DNS Zone](https://docs.microsoft.com/en-us/azure/dns/private-dns-overview) to [VNet](https://docs.microsoft.com/en-us/azure/virtual-network/) |
-| Connection refused | Add [NSG](https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview) allow rule for port 443 |
-| Pending approval | Approve in [Azure resource](https://azure.microsoft.com/en-us/services/) |
-| Auth fails | Assign [RBAC](https://docs.microsoft.com/en-us/azure/role-based-access-control/overview) roles |
+| Component | Resource Name | Status |
+|-----------|--------------|--------|
+| [Virtual Network](https://docs.microsoft.com/en-us/azure/virtual-network/) | india-vnt | Created |
+| [Storage Account](https://docs.microsoft.com/en-us/azure/storage/) | shreyablob | Created |
+| [Private Endpoint](https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview) | storageendpoint | Approved |
+| [Container](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction) | mycont | Created |
+| [Managed Identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/) | myidentities | Configured |
+| Region | Central India | Active |
 
 ---
 
-# Key Terms
+# Key Learnings
 
-- **[Private Link](https://docs.microsoft.com/en-us/azure/private-link/)** - Private connectivity to Azure services
-- **[Private Endpoint](https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview)** - Private network interface to Azure service
-- **[Managed Identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/)** - Credential-less authentication
-- **[NSG](https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview)** - Network firewall rules
--
+- [Private Link](https://docs.microsoft.com/en-us/azure/private-link/) ensures data stays on Microsoft backbone network
+- [Private Endpoints](https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview) require proper [DNS](https://docs.microsoft.com/en-us/azure/dns/private-dns-overview) and [NSG](https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview) configuration
+- [Managed Identity](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/) is more secure than access keys
+- Public access should be disabled when using private connectivity
+- Proper subnet segmentation is crucial for security
+
+
 # Azure Service Endpoints Project
   
 [View Project Documentation](https://raw.githubusercontent.com/shreyatiwari1311-lgtm/Beginner-azure-projects/main/services%20endpoints.pdf)
