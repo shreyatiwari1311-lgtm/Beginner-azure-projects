@@ -7,6 +7,52 @@ This repo contais hand-on projects  and practical exercise i've built while lear
 This repository is designed to showcase my journey in Azure Cloud.
 Each project focuses on real-world concepts and help me build storng cloud fundamentals.
 
+# Azure NSG Implementation
+
+** Documentation**: [NSG.pdf](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects/blob/main/NSG.pdf) | **Repository**: [Beginner-azure-projects](https://github.com/shreyatiwari1311-lgtm/Beginner-azure-projects)
+
+---
+
+# What I Built
+
+- **Virtual Network (VNET)**: 10.0.0.0/16 in Central India
+- **Subnets**: SUBNET1 (10.0.0.0/24) & SUBNET2 (10.1.0.0/24)
+- **NSG (LINUXnsg)**: Firewall rules at subnet level
+- **VM (LINUXvm)**: Ubuntu 24.04 on SUBNET1
+
+---
+
+# Challenges I Faced
+
+1. **IP Addressing** - Managed /16 space across multiple /24 subnets with proper segmentation
+2. **Rule Priority Conflicts** - Balanced custom rules (priority 100) with Azure defaults (65000, 65001, 65500)
+3. **NSG Placement** - Chose subnet-level attachment over NIC-level for scalability
+4. **SSH Access** - Allowed port 22 only from specific admin IP (152.58.44.105)
+5. **Best Practices** - Used existing subnet NSG instead of creating redundant VM-level NSG
+
+---
+
+# What I Implemented
+
+1. **Network Segmentation** - Isolated subnets for multi-workload deployment
+2. **Firewall Rules** - Priority-based inbound rules (SSH allowed, default deny all)
+3. **Least Privilege Access** - Only port 22 from admin IP, everything else blocked
+4. **VM Integration** - LINUXvm connected via SUBNET1 with public IP
+5. **Network Monitoring** - Enabled Network Watcher topology visualization
+6. **Scalable Design** - Architecture supports adding VMs without rule changes
+
+---
+
+# Quick Summary
+
+| Item | Config |
+|------|--------|
+| Virtual Network | VNET (10.0.0.0/16) |
+| NSG Rules | Priority 100 (SSH) → Priority 65500 (Deny) |
+| VM Subnet | SUBNET1 (10.0.0.0/24) |
+| SSH Access | Port 22 from 152.58.44.105 only |
+| Status | ✅ Production ready with security-first approach |
+
 #  Projects Included
 # APP SERVICES 
  What I Built
